@@ -97,7 +97,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ 0,	      XF86XK_MonBrightnessUp,	   spawn,	   SHCMD("xbacklight -inc 5") },
-	{ 0,	      XF86XK_MonBrightnessDown,	   spawn,	   SHCMD("xbacklight -dec 5") },	
+	{ 0,	      XF86XK_MonBrightnessDown,	   spawn,	   SHCMD("xbacklight -dec 5") },
+	{ 0,	      XF86XK_AudioRaiseVolume,	   spawn,	   SHCMD("pamixer -i 1") },
+	{ 0,	      XF86XK_AudioLowerVolume,	   spawn,	   SHCMD("pamixer -d 1") },
+	{ 0,	      XF86XK_AudioMute,		   spawn,	   SHCMD("pamixer -t") },
 };
 
 /* button definitions */
