@@ -44,7 +44,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -100,7 +100,11 @@ static Key keys[] = {
 	{ 0,	      XF86XK_MonBrightnessDown,	   spawn,	   SHCMD("xbacklight -dec 5") },
 	{ 0,	      XF86XK_AudioRaiseVolume,	   spawn,	   SHCMD("pamixer -i 1") },
 	{ 0,	      XF86XK_AudioLowerVolume,	   spawn,	   SHCMD("pamixer -d 1") },
-	{ 0,	      XF86XK_AudioMute,		   spawn,	   SHCMD("pamixer -t") },
+	{ 0,	      XF86XK_AudioMute,			   spawn,	   SHCMD("pamixer -t") },
+	{ 0,	      XF86XK_AudioPlay,	   		   spawn,	   SHCMD("playerctl --all-players play-pause") },
+	{ 0,	      XF86XK_AudioStop,			   spawn,	   SHCMD("playerctl --all-players stop") },
+	{ 0,	      XF86XK_AudioPrev,			   spawn,	   SHCMD("playerctl --all-players previous") },
+	{ 0,	      XF86XK_AudioNext,		   	   spawn,	   SHCMD("layerctl --all-players next") },
 };
 
 /* button definitions */
