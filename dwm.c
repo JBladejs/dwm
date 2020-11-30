@@ -205,6 +205,7 @@ static void setclientstate(Client *c, long state);
 static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void setgaps(int oh, int ov, int ih, int iv);
+static void startup(void);
 static void incrgaps(const Arg *arg);
 static void incrigaps(const Arg *arg);
 static void incrogaps(const Arg *arg);
@@ -1533,6 +1534,13 @@ setgaps(int oh, int ov, int ih, int iv)
 }
 
 void
+startup(void)
+{
+	system("killall -q dwmblocks; dwmblocks &");
+
+}
+
+void
 togglegaps(const Arg *arg)
 {
 	enablegaps = !enablegaps;
@@ -2270,6 +2278,7 @@ main(int argc, char *argv[])
 		die("dwm: cannot open display");
 	checkotherwm();
 	setup();
+	startup();
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
 		die("pledge");
