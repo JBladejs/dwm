@@ -78,7 +78,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	
 	/* modifier                     key        function        argument */
-	{ MODKEY,      			XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,             			XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
@@ -89,24 +89,24 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
-	{ MODKEY,     			XK_q,      killclient,     {0} },
+	{ MODKEY,            			XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY, 			XK_w,	   spawn,		   SHCMD("$BROWSER") },
+	{ MODKEY, 						XK_w,	   spawn,		   SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_p, 	   setlayout,      {0} },	
 
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,             		XK_g,      incrgaps,       {.i = +1} },
-	{ MODKEY|ShiftMask,             XK_g,      incrgaps,       {.i = -1} },
+	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
+	{ MODKEY,             			XK_g,      incrgaps,       {.i = +1} },
+	{ MODKEY|ShiftMask,             XK_g,      incrgaps,       {.i = +1} },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	
-	{ MODKEY,			XK_v,      defaultgaps,    {0} },
+	{ MODKEY,   					XK_v,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 
