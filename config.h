@@ -100,7 +100,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY,             			XK_g,      incrgaps,       {.i = +1} },
-	{ MODKEY|ShiftMask,             XK_g,      incrgaps,       {.i = +1} },
+	{ MODKEY|ShiftMask,             XK_g,      incrgaps,       {.i = -1} },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -109,6 +109,8 @@ static Key keys[] = {
 	{ MODKEY,   					XK_v,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+
+	{ 0,             			XK_Print,  spawn,      SHCMD("maim $HOME/Pictures/screenshots/screen-$(date '+%Y.%m.%d-%H.%M-%S').png") },
 
 	{ 0,	      XF86XK_MonBrightnessUp,	   spawn,	   SHCMD("xbacklight -inc 5") },
 	{ 0,	      XF86XK_MonBrightnessDown,	   spawn,	   SHCMD("xbacklight -dec 5") },
